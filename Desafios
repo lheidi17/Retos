@@ -1,0 +1,13 @@
+#1. Filtrar y manipular data frames
+##especies <- data.frame(
+  especie = c("Ajolote", "Rana", "Serpiente", "Tortuga"),
+  habitat = c("Lago", "Río", "Bosque", "Lago"),
+  tamano = c(30, 10, 150, 50),
+  peso = c(150, 25, 1000, 500)
+)
+# 1.1 Filtrar todas las especies que viven en un lago.
+especies_lago <- especies %>%
+  filter(habitat == "Lago") %>%
+  arrange(desc(tamano))
+
+print(especies_lago)
