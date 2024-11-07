@@ -7,7 +7,7 @@ especies <- data.frame(
   peso = c(150, 25, 1000, 500)
 )
 
-# #1.1Filtrar las especies que viven en un lago y ordenar por tamaño (de mayor a menor)
+# 1.1 Filtrar las especies que viven en un lago y ordenar por tamaño (de mayor a menor)
 especies_lago <- especies %>%
   filter(habitat == "Lago") %>%
   arrange(desc(tamano))
@@ -23,7 +23,7 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
   theme_minimal() +
   scale_color_manual(values = c("setosa" = "purple", "versicolor" = "black", "virginica" = "yellow"))
 
-![sepalo](https://github.com/user-attachments/assets/42c39b8f-dbcd-481d-9621-2f0c020a3f5c)
+
 
 # Desafío 3 Agrupar datos y realizar cálculos agregados 
 
@@ -67,12 +67,6 @@ print(alturas)
 # Desafío 5 Generación de gráficos de barras
 * Crear un gráfico de barras para visualizar las ventas mensuales.
 
-# Instalar el paquete ggplot2 si no lo tienes instalado en r, de acuerdo
-
-# Cargar el paquete ggplot2
-library(ggplot2)
-
-# Crear el data frame de ventas
 ventas <- data.frame(
   mes = c("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"),
   ventas = c(12000, 15000, 13000, 16000, 17500, 14000)
@@ -87,10 +81,6 @@ ggplot(ventas, aes(x = mes, y = ventas, fill = mes)) +
   theme_minimal() +
   scale_fill_brewer(palette = "Set3") # Utilice una paleta de colores para mayor diferencia
 
-```
-
-![ventas](https://github.com/user-attachments/assets/9414cd7c-eff5-40e1-a4a6-2b19d4fa5be2)
-
 
 # Desafío 6 Lectura & escritura de archivos cvs
 
@@ -100,14 +90,11 @@ productos <- data.frame(
   cantidad_vendida = c(100, 200, 150, 250)
 )
 
-
 productos <- productos %>%
   mutate(ingreso_total = precio * cantidad_vendida)
 
-
 write.csv(productos, "productos_con_ingresos.csv", row.names = FALSE)
 print(productos)
-```
 
 ### Resultado
 
